@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+@layer base {
+    html {
+        font-family: "Fira Code", monospace;
+        font-optical-sizing: auto;
+    }
+
+    html[data-theme="darkNight"] {
+        --color-bg: #1e293b;
+        --color-splash: #f9a8d4;
+        --color-text: #ffe4e6;
+        --color-frame: #a1a1aa;
+        --color-prom1: #fb7185;
+        --color-prom2: #10b981;
+    }
+
+    html[data-theme="Wastelands"] {
+        --color-bg: #3b1e29;
+        --color-splash: #d4f9a8;
+        --color-text: #e6ffe4;
+        --color-frame: #aaa1a1;
+        --color-prom1: #85fb71;
+        --color-prom2: #81b910;
+    }
+
+    html[data-theme="coffe"] {
+        --color-bg: #644949;
+        --color-splash: #ecd6b7;
+        --color-text: #f6f6f6;
+        --color-frame: #9d8c7c;
+        --color-prom1: #cf7a57;
+        --color-prom2: #8a8a8a;
+    }
+
+    html[data-theme="pastelClouds"] {
+        --color-bg: #f0f0f3;
+        --color-splash: #ffbdbd;
+        --color-text: #7e7e93; 
+        --color-frame: #c7d2e6; 
+        --color-prom1: #98b2de; 
+        --color-prom2: #ffd3b6;
+    }
+
+    html[data-theme="neon"]{
+        --color-bg: #000000;
+        --color-splash: #ff00ff; 
+        --color-text: #ffffff; 
+        --color-frame: #00ff00; 
+        --color-prom1: #00ffff; 
+        --color-prom2: #ff9900; 
+    }
+
+    html[data-theme="grayScale"] {
+        --color-bg: #f5f5f5;
+        --color-splash: #cccccc; 
+        --color-text: #333333; 
+        --color-frame: #999999; 
+        --color-prom1: #666666; 
+        --color-prom2: #cccccc; 
+    }
+
+    html[data-theme="ocean"] {
+        --color-bg: #007B7F;
+        --color-splash: #00A6A6;
+        --color-text: #FFFFFF;
+        --color-frame: #80CED7;
+        --color-prom1: #FF6F61;
+        --color-prom2: #FFE66D;
+    }
+
+    html[data-theme="calmSpace"] {
+        --color-bg: #2A2D34;
+        --color-splash: #3B6978;
+        --color-text: #E6E6E6;
+        --color-frame: #C5D9E2;
+        --color-prom1: #F67280;
+        --color-prom2: #FFE5D9;
+    }
+
+    html[data-theme="modernWhite"] {
+        --color-bg: #F5F5F5;
+        --color-splash: #A5C8E1;
+        --color-text: #333333;
+        --color-frame: #CCCCCC;
+        --color-prom1: #FF7F50;
+        --color-prom2: #6C7B8B;
+    }
+
+    html[data-theme="bananaSunset"] {
+        --color-bg: #F9EBD2; 
+        --color-splash: #F08A5D; 
+        --color-text: #4A4E69; 
+        --color-frame: #F2CC8F;
+        --color-prom1: #7E9181; 
+        --color-prom2: #EEAA7B; 
+    }
+
+    html[data-theme="lavenderHill"] {
+        --color-bg: #4e2676; 
+        --color-splash: #ad6bc8; 
+        --color-text: #e4d4f2; 
+        --color-frame: #8E44AD; 
+        --color-prom1: #D2B4DE; 
+        --color-prom2: #588e7c; 
+    }
+
+    html[data-theme="orangeJuice"] {
+        --color-bg: #f0a43b; /* Peach background */
+        --color-splash: #893628; /* Tomato splash */
+        --color-text: #ddd3af; /* White text */
+        --color-frame: #FF7F50; /* Coral frame */
+        --color-prom1: #f05431; /* Darker orange for promotions */
+        --color-prom2: #7d0101; /* Dark Red for promotions */
+    }
+
+    html[data-theme="cherryBlossom"] {
+        --color-bg: #F8E0E6; /* Light pink background */
+        --color-splash: #ac7e87; /* Pale pink splash */
+        --color-text: #6E515B; /* Plum text */
+        --color-frame: #FFC0CB; /* Pink frame */
+        --color-prom1: #FF69B4; /* Hot pink for promotions */
+        --color-prom2: #C71585; /* Medium violet red for promotions */
+    }
+
+}   
+
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+   /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+  }
+}
