@@ -1,24 +1,35 @@
-// Input.tsx
 import React, { useEffect, useState } from "react";
-import { changeTheme } from "./utils/themeChagne";
+import Help from "./responses/Help";
+import Kitten from "./responses/Kitten";
+import Theme from "./responses/Theme";
+import Media from "./responses/Media";
 
 const Input: React.FC = () => {
     const [history, setHistory] = useState<JSX.Element[]>([]);
     const [keysBuffer, setKeysBuffer] = useState<string[]>([]);
-    const [out, setOut] = useState<string>('');
-    const [outLast, setOutLast] = useState<string>('');
+    const [out, setOut] = useState<JSX.Element>();
 
     useEffect(() => {
-        function checkAction() {
+
+        async function checkAction() {
             const input = keysBuffer.join('');
-            let newOutput = '';
-            if (input === "help") {
-                newOutput = "this is help";
+            const inputArray = input.split(' ')
+            let newOutput;
+            if (inputArray[0] === "help") {
+                newOutput = <Help/>
+            } else if(inputArray[0] === "media") {
+                newOutput = <Media/>
+            } else if(inputArray[0] === "theme" || inputArray[0] === "themes") {
+                newOutput = <Theme theme={inputArray.length  > 1 ? inputArray[1] : ""}/>
+            } else if(inputArray[0] === "kitten") {
+                newOutput = <Kitten/>
             } else {
-                newOutput = "no such command: " + input;
+                if(input.length !== 0) {
+                    newOutput = (<div>no such command: {input}</div>);
+                }
+                
             }
 
-            setOutLast(out);
             setOut(newOutput);
 
             const newElement = (
@@ -28,9 +39,9 @@ const Input: React.FC = () => {
                     <span className="text-prom2">terminal</span>
                     <span className="text-frame">:$ ~ </span>
                     <span>{input}</span><br />
-                    <p><br /></p>
+                    {input.length !== 0 ? <p><br /></p> : ""}
                     <span>{newOutput}</span>
-                    <p><br /></p>
+                    {input.length !== 0 ? <p><br /></p> : ""}
                 </div>
             );
 
@@ -42,6 +53,8 @@ const Input: React.FC = () => {
             const pressedKey = event.key;
             if (pressedKey === 'Backspace') {
                 setKeysBuffer(prevBuffer => prevBuffer.slice(0, -1));
+            } else if(pressedKey == 'Escape') {
+                setKeysBuffer([]);
             } else if (pressedKey === 'Enter') {
                 checkAction();
             } else if (pressedKey.length === 1) {
@@ -54,7 +67,7 @@ const Input: React.FC = () => {
         return () => {
             document.body.removeEventListener('keydown', handleKeyPress);
         };
-    }, [keysBuffer, history, out, outLast]);
+    }, [keysBuffer, history, out]);
 
     return (
         <div className="test">
