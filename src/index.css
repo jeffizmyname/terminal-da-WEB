@@ -27,7 +27,7 @@
         --color-prom2: #81b910;
     }
 
-    html[data-theme="coffe"] {
+    html[data-theme="coffee"] {
         --color-bg: #644949;
         --color-splash: #ecd6b7;
         --color-text: #f6f6f6;
