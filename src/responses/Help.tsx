@@ -4,6 +4,7 @@ export default function Help() {
     const commands = [
         ['help', 'displays this'],
         ['theme/themes', 'shows options for chganing theme'],
+        ['weather [city]', 'nice weather info for given city'],
         ['kitten', 'generates kitten picture :3']
     ]
 
